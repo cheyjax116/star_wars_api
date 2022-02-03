@@ -1,2 +1,2 @@
-# star_wars_api
-Star Wars API Using React
+# Star Wars API App
+Star Wars API using React
