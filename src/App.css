@@ -8,7 +8,8 @@
 
 html,
 body {
-  background: url('img/sw_bg.jpg');
+  background: url('img/sw_bg.jpg') no-repeat center/cover ;
+  height: 100vh;
   color: white
 }
 
@@ -22,4 +23,15 @@ header img {
   display: flex;
   align-items: center;
   align-content: center;
+}
+
+table {
+
+  margin: auto;
+  margin-top: 50px;
+
+}
+
+table th, td  {
+  text-align: center;
 }
