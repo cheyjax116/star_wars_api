@@ -35,3 +35,24 @@ table {
 table th, td  {
   text-align: center;
 }
+
+.pagination > li {
+  color: rgb(232, 4, 4);
+  
+}
+
+
+li.page-link:active{
+  background-color: rgb(230, 197, 65);
+  color:  white;
+}
+
+li.page-link:hover{
+  background-color: rgb(230, 197, 65);
+  color:  white;
+}
+
+span.page-link.page-item.active {
+  background-color: rgb(230, 197, 65);
+  color:  white;
+}
