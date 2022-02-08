@@ -17,6 +17,7 @@ header img {
   margin: auto;
   width: 350px;
   margin-top: 150px;
+  margin-bottom: 50px;
 }
 
 .center{
@@ -28,7 +29,7 @@ header img {
 table {
 
   margin: auto;
-  margin-top: 50px;
+  margin-top: 10px;
 
 }
 
@@ -46,13 +47,43 @@ li.page-link:active{
   background-color: rgb(230, 197, 65);
   color:  white;
 }
+li.page-item:active{
+  background-color: rgb(230, 197, 65);
+  color:  white;
+}
 
 li.page-link:hover{
   background-color: rgb(230, 197, 65);
   color:  white;
 }
 
-span.page-link.page-item.active {
-  background-color: rgb(230, 197, 65);
-  color:  white;
+
+
+.pagination > li.active {
+  background: rgb(230, 197, 65);
+  color: #fff;
+}
+
+input {
+  display: block;
+  margin: auto;
+  margin-top: 40px; 
+  width: 40%;
+  text-align: center;
+  /* width: 300px;
+  border-width: 2px;
+  accent-color: rgb(255, 0, 55); */
+
+}
+
+input:focus, textarea:focus{
+  outline: none !important;
+  border-color: rgb(230, 197, 65);
+  box-shadow: 0 0 20px rgb(230, 197, 65);
+}
+
+.centerText{
+  display: block;
+  margin: 0px auto;
+  text-align: center;
 }
