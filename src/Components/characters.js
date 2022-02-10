@@ -6,16 +6,52 @@ import axios from 'axios';
 const Characters = () => {
 
     const [characters, setCharacters] = useState([]);
-    const [page, setPage] = useState(1);
+    const [loading, setLoading] = useState(false);
+    const [currentPage, setCurrentPage] = useState(1);
     const [searchTerm, setSearchTerm] = useState("");
+    const [charactersPerPage, setcharactersPerPage] = useState(10); 
     
     useEffect(() => {
-      
-            axios.get(`http://swapi.dev/api/people/?page=${page}`).then(res => {
-                
-               setCharacters(res.data.results);
-            //    console.log(res.data.results)
-            })
+        
+        
+        
+        
+        // axios.get(`http://swapi.dev/api/people/?page=${page}`).then(res => {
+            
+            //     setCharacters(res.data.results)
+            
+            //     })
+        
+                    let urls = [
+                        "https://swapi.dev/api/people/?page=1",
+                        "https://swapi.dev/api/people/?page=2",
+                        "https://swapi.dev/api/people/?page=3",
+                        "https://swapi.dev/api/people/?page=4",
+                        "https://swapi.dev/api/people/?page=5",
+                        "https://swapi.dev/api/people/?page=6",
+                        "https://swapi.dev/api/people/?page=7",
+                        "https://swapi.dev/api/people/?page=8",
+                        "https://swapi.dev/api/people/?page=9"
+                    ];
+                    
+                    
+                    const allData = [];
+                    
+                    Promise.all(urls.map((url) => axios.get(url))).then((res) =>
+                    res.map(data => {
+                        //   console.log(data.data.results)
+                        allData.push(data.data.results)
+                        return setCharacters(allData.flat())
+                        
+                    })
+            );
+    
+    // console.log(allData)
+
+    // let finalData = allData.reduce(function(acc, x){
+    //     for (var key in x) acc [key] = x[key];
+    //     return acc;
+    // }, {});           
             
             // .catch((err) => {
             //     console.log(err)
@@ -27,60 +63,70 @@ const Characters = () => {
             // })
 
             // console.log(searchTerm)
-            
+       
 
         
-    }, [page, searchTerm, setCharacters]);
+    }, [currentPage, searchTerm, setCharacters]);
 
-    const nextPageClick = () => {
-        if (page <= 8) {
+//     const nextPageClick = () => {
+//         if (page <= 8) {
             
-            setPage(page + 1)
-            let currentPage = page + 1;
-            removeActive();
-            checkPage(currentPage)
+//             setPage(page + 1)
+//             let currentPage = page + 1;
+//             removeActive();
+//             checkPage(currentPage)
 
           
     
-        }
+//         }
         
-    }
+//     }
 
-    const previousPageClick = () => {
-    if (page >= 2) {
-        setPage(page - 1)
-        let currentPage = page - 1;
-        removeActive();
-        checkPage(currentPage)
-    }
+//     const previousPageClick = () => {
+//     if (page >= 2) {
+//         setPage(page - 1)
+//         let currentPage = page - 1;
+//         removeActive();
+//         checkPage(currentPage)
+//     }
   
-}
+// }
 
 
-const setPageNumber = (value) => {
-    removeActive()
-    setPage(Number(value.target.innerText))
-    value.target.classList.toggle('active')
+// const setPageNumber = (value) => {
+//     removeActive()
+//     setPage(Number(value.target.innerText))
+//     value.target.classList.toggle('active')
     
- };
+//  };
 
- const removeActive = () => {
-    let pages = document.getElementsByClassName("page-link");
-    Array.from(pages).forEach((page) => {
-      page.classList.remove("page-item");
-      page.classList.remove("active");
-    });
-  };
+//  const removeActive = () => {
+//     let pages = document.getElementsByClassName("page-link");
+//     Array.from(pages).forEach((page) => {
+//       page.classList.remove("page-item");
+//       page.classList.remove("active");
+//     });
+//   };
 
-  const checkPage = (pageNumber) => {
-    let stringedPageNumber = String(pageNumber);
-    let check = document.getElementById(stringedPageNumber).classList;
-    check.add("active");
-  };
+//   const checkPage = (pageNumber) => {
+//     let stringedPageNumber = String(pageNumber);
+//     let check = document.getElementById(stringedPageNumber).classList;
+//     check.add("active");
+//   };
+
+
    
+if (loading) {
+ return <h1>Loading...</h1>
+ }
 
-    return ( <div> 
-    
+ const indexOfLastCharacter = currentPage * charactersPerPage;
+ const indexOfFirstCharacter = indexOfLastCharacter - charactersPerPage;
+ const currentCharacters = characters.slice(indexOfFirstCharacter, indexOfLastCharacter);
+
+    return ( <div className='container'> 
+
+  
     <input 
           type="text" 
         //   className='form-control' 
@@ -94,6 +140,8 @@ const setPageNumber = (value) => {
     {
         
     !characters ? ("Character Not Found"): (
+
+
         
     <table className='table table-bordered bg-light text-dark table-hover'>
         <thead>
@@ -121,7 +169,8 @@ const setPageNumber = (value) => {
                          character.species.includes(searchTerm)   
                         
                     ){
-                        return character
+                        
+                        return character;
                     } 
 
                 }).map((character, index) => (
@@ -138,7 +187,7 @@ const setPageNumber = (value) => {
         </tbody>
     </table>
     )}
-    <nav className='d-flex justify-content-center'>
+    {/* <nav className='d-flex justify-content-center'>
 
 
         <ul className='pagination'>
@@ -162,7 +211,7 @@ const setPageNumber = (value) => {
             }
            
         </ul>
-    </nav>
+    </nav> */}
 
     </div> 
     );
