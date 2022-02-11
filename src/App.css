@@ -6,18 +6,19 @@
 }
 
 
-html,
-body {
-  background: url('img/sw_bg.jpg') no-repeat center/cover ;
+.bg-image{
+  background: url('img/star-wars-background-3-dark.png') no-repeat center/cover ;
   height: 100vh;
-  color: white
+  color: white;
 }
+
 
 header img {
   margin: auto;
   width: 350px;
   margin-top: 150px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
+  
 }
 
 .center{
@@ -29,51 +30,29 @@ header img {
 table {
 
   margin: auto;
-  margin-top: 10px;
-
+  margin-top: 30px;
 }
 
 table th, td  {
   text-align: center;
 }
 
-.pagination > li {
+.pagination {
+  display: flex;
+  justify-content: center;
   color: rgb(232, 4, 4);
-  
+
 }
 
-
-li.page-link:active{
-  background-color: rgb(230, 197, 65);
-  color:  white;
-}
-li.page-item:active{
-  background-color: rgb(230, 197, 65);
-  color:  white;
-}
-
-li.page-link:hover{
-  background-color: rgb(230, 197, 65);
-  color:  white;
-}
-
-
-
-.pagination > li.active {
-  background: rgb(230, 197, 65);
-  color: #fff;
-}
 
 input {
   display: block;
   margin: auto;
-  margin-top: 40px; 
+  margin-top: 40px;
   width: 40%;
   text-align: center;
-  /* width: 300px;
-  border-width: 2px;
-  accent-color: rgb(255, 0, 55); */
-
+  border-width: 3px;
+  border-color: rgb(230, 197, 65);;
 }
 
 input:focus, textarea:focus{
@@ -86,4 +65,65 @@ input:focus, textarea:focus{
   display: block;
   margin: 0px auto;
   text-align: center;
+}
+
+
+.pagination a {
+  
+  color: brown;
+  cursor: pointer;
+  background-color: white;
+  text-decoration: none;
+
+}
+
+
+.pagination a:hover{
+  color: white !important;
+  background-color: brown;
+  box-shadow: 0 0 10px rgb(230, 197, 65);
+}
+
+/* .pagination a:focus{
+  color: white !important;
+  background-color: brown;
+  box-shadow: 0 0 10px rgb(230, 197, 65);
+  outline-color: black !important;
+} */
+
+
+.page-item.active .page-link {
+  color: white !important;
+  background-color:brown  !important;
+  box-shadow: 0 0 10px rgb(230, 197, 65) !important;
+  outline-color: black !important;
+  
+}
+
+.page-item .page-link {
+  color: brown !important;
+ 
+  
+    
+}
+
+.page-item.hover .page-link {
+  background-color: brown !important;
+  color: white;
+  box-shadow: 0 0 20px rgb(230, 197, 65) !important;
+
+}
+
+.disabled a{
+  color: grey !important;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+
+.page-item.focus .page-link {
+  background-color: brown !important;
+  color: white;
+  box-shadow: 0 0 20px rgb(230, 197, 65) !important;
+
 }
