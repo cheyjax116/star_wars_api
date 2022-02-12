@@ -6,52 +6,11 @@ if (loading) {
  return <h1>Loading...</h1>
  }
 
-
-  
-
-
-// const getPlanet = (url) => {
-
-//     // 'https://swapi.dev/api/planets/2/'
-//     console.log(url)
-
-//     // planets.map((planet) => {
-//     //     if (planet.url === url) {
-//     //         return planet.name
-//     //         // console.log(planet.name)
-//     //      } 
-//     // })
-
-// }
-
-species.map(species => {
-    console.log(species.url, species.name)
-})
-
-// characters.map( (character) => {
-//         console.log(character.species)
-//         species.map( species => {
-//             console.log(species.name)
-//         })
-    
-//     })
-    // characters.map( (character, index) => {
-        // console.log(typeof(character.homeworld))
-        // })
-        
-
-
-        // species.map((species) => {
-        //     if (species.url ===  character.species) {
-        //        return species.name
-        //        } 
-        //     })
         
         return ( <div> 
     {
           
     !characters ? ("Character Not Found"): (
-
 
         
     <table className='table table-bordered bg-light text-dark table-hover'>
@@ -83,9 +42,7 @@ species.map(species => {
                     ){
                         
                         return character;
-                    } 
-
-                        
+                    }  
                 }).map((character, index) => (
                     
                     <tr key={index}>
@@ -98,16 +55,17 @@ species.map(species => {
                          if (planet.url === character.homeworld) {
                             return planet.name
                              }
+
                             })
                         }</td>
                         <td>{
                             species.map((species) => {
-                        if (species.url === character.species) {
+                         if (species.url === (character.species[0])) {
                             return species.name
+                             } 
 
-                                }
-                            })
-                            
+                            })      
+
                         }</td>
 
                     </tr>
