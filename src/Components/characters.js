@@ -1,16 +1,33 @@
+import Spinner from "./ui/Spinner"
+
+
 
 const Characters = ({characters, loading, searchTerm, planets, species }) => {
 
 
-if (loading) {
- return <h1>Loading...</h1>
- }
+    if (loading) {
+       return (
+           <div>
 
+
+       <h1 className="centerText">Loading Character Data. Please Wait...</h1>
+       
+       <Spinner />
+       
+
+           </div>
+       )
+       
+        }
         
-        return ( <div> 
+        return (
+            
+            
+            <div> 
+            
     {
           
-    !characters ? ("Character Not Found"): (
+    !characters ? ( <h1>Character Not Found</h1>): (
 
         
     <table className='table table-bordered bg-light text-dark table-hover'>
@@ -59,12 +76,21 @@ if (loading) {
                             })
                         }</td>
                         <td>{
-                            species.map((species) => {
-                         if (species.url === (character.species[0])) {
-                            return species.name
-                             } 
 
-                            })      
+                            species.map((species) => {
+                                if (species.url === character.species[0]) {
+                                    return species.name
+                                } else if ((character.species).length === 0) {
+                                    character.species[0] = 'https://swapi.dev/api/species/1/'
+                                     if (species.url = character.species[0]) {
+                                         return species.name
+                                     }
+                                    
+                                }
+                            })
+
+                        
+                
 
                         }</td>
 

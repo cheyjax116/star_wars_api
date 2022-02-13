@@ -8,7 +8,7 @@ import Pagination from './Components/Pagination';
 const App = () => {
 
   const [characters, setCharacters] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   // const [currentPage, setCurrentPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState("");
   const [charactersPerPage, setcharactersPerPage] = useState(10); 
@@ -22,32 +22,32 @@ const App = () => {
         
         
     const urls = [
-        "https://swapi.dev/api/people/?page=1",
-        "https://swapi.dev/api/people/?page=2",
-        "https://swapi.dev/api/people/?page=3",
-        "https://swapi.dev/api/people/?page=4",
-        "https://swapi.dev/api/people/?page=5",
-        "https://swapi.dev/api/people/?page=6",
-        "https://swapi.dev/api/people/?page=7",
-        "https://swapi.dev/api/people/?page=8",
-        "https://swapi.dev/api/people/?page=9"
+        "http://swapi.dev/api/people/?page=1",
+        "http://swapi.dev/api/people/?page=2",
+        "http://swapi.dev/api/people/?page=3",
+        "http://swapi.dev/api/people/?page=4",
+        "http://swapi.dev/api/people/?page=5",
+        "http://swapi.dev/api/people/?page=6",
+        "http://swapi.dev/api/people/?page=7",
+        "http://swapi.dev/api/people/?page=8",
+        "http://swapi.dev/api/people/?page=9"
     ];
 
-    const planets = [
-        "https://swapi.dev/api/planets/?page=1",
-        "https://swapi.dev/api/planets/?page=2",
-        "https://swapi.dev/api/planets/?page=3",
-        "https://swapi.dev/api/planets/?page=4",
-        "https://swapi.dev/api/planets/?page=5",
-        "https://swapi.dev/api/planets/?page=6"
+    const planetsData = [
+        "http://swapi.dev/api/planets/?page=1",
+        "http://swapi.dev/api/planets/?page=2",
+        "http://swapi.dev/api/planets/?page=3",
+        "http://swapi.dev/api/planets/?page=4",
+        "http://swapi.dev/api/planets/?page=5",
+        "http://swapi.dev/api/planets/?page=6"
 
     ]
     
-    let species = [
-        "https://swapi.dev/api/species/?page=1",
-        "https://swapi.dev/api/species/?page=2",
-        "https://swapi.dev/api/species/?page=3",
-        "https://swapi.dev/api/species/?page=4"
+    const speciesData = [
+        "http://swapi.dev/api/species/?page=1",
+        "http://swapi.dev/api/species/?page=2",
+        "http://swapi.dev/api/species/?page=3",
+        "http://swapi.dev/api/species/?page=4"
         
     ]
     
@@ -56,7 +56,7 @@ const App = () => {
     
     Promise.all(urls.map((url) => axios.get(url))).then((res) =>
     res.map(data => {
-        allData.push(data.data.results)
+      allData.push(data.data.results)
         setLoading(false);
         return setCharacters(allData.flat())
         
@@ -66,26 +66,27 @@ const App = () => {
 );
 
 
+
 const allPlanets = []
 
-Promise.all(planets.map((planet) => axios.get(planet))).then((res) => {
+Promise.all(planetsData.map((planet) => axios.get(planet))).then((res) => {
   res.map(data => {
     allPlanets.push(data.data.results)
     return setPlanets(allPlanets.flat())
   })
-
+  
 })
 
 const allSpecies = []
 
-Promise.all(species.map((species) => axios.get(species))).then((res) => {
+Promise.all(speciesData.map((species) => axios.get(species))).then((res) => {
   res.map(data => {
     allSpecies.push(data.data.results)
     return setSpecies(allSpecies.flat())
+    
   })
-
+ 
 })
-
 
 
 
@@ -121,7 +122,7 @@ const pagesVisited = pageNumber * charactersPerPage
           // autoFocus
         />
        
-
+        
 
 
       <Characters characters={currentCharacters} loading={loading} searchTerm={searchTerm} planets={planets} species={species} />
