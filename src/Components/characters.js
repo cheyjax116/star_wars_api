@@ -18,7 +18,7 @@ const Characters = ({ characters, loading }) => {
           Character Not Found. Please Try Another.
         </div>
       ) : (
-        <table className="table table-bordered bg-light text-dark table-hover">
+        <table className="table=responsive table table-bordered bg-light text-dark table-hover">
           <thead>
             <tr>
               <th>Name</th>
