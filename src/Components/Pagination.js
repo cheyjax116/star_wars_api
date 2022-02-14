@@ -1,13 +1,9 @@
-import React from 'react'
-import ReactPaginate from 'react-paginate';
+import React from "react";
+import ReactPaginate from "react-paginate";
 
-
-const Pagination = ({ pageCount, changePage }) => {
-
-
+const Pagination = ({ pageCount, changePage, pageNumber }) => {
   return (
-      <div>
-      
+    <div>
       <ReactPaginate
         previousLabel={"← Previous Page"}
         nextLabel={"Next Page →"}
@@ -16,16 +12,15 @@ const Pagination = ({ pageCount, changePage }) => {
         containerClassName={"pagination"}
         pageClassName={"page-item"}
         pageLinkClassName={"page-link"}
-        previousLinkClassName="page-link" 
+        previousLinkClassName="page-link"
         nextLinkClassName={"page-link"}
         disabledClassName={"disabled"}
         activeClassName={"active"}
         pageRangeDisplayed={9}
+        forcePage={pageNumber}
       />
     </div>
-  )
-}
+  );
+};
 
-export default Pagination
-
-
+export default Pagination;

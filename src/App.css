@@ -1,39 +1,35 @@
-
 .container {
   max-width: 1100px;
   margin: auto;
   padding: 0 20px;
 }
 
-
-.bg-image{
-  background: url('img/star-wars-background-3-dark.png') no-repeat center/cover ;
+.bg-image {
+  background: url("img/star-wars-background-3-dark.png") no-repeat center/cover;
   height: 100vh;
   color: white;
 }
-
 
 header img {
   margin: auto;
   width: 350px;
   margin-top: 150px;
   margin-bottom: 30px;
-  
 }
 
-.center{
+.center {
   display: flex;
   align-items: center;
   align-content: center;
 }
 
 table {
-
   margin: auto;
   margin-top: 30px;
 }
 
-table th, td  {
+table th,
+td {
   text-align: center;
 }
 
@@ -41,9 +37,7 @@ table th, td  {
   display: flex;
   justify-content: center;
   color: rgb(232, 4, 4);
-
 }
-
 
 input {
   display: block;
@@ -52,81 +46,69 @@ input {
   width: 40%;
   text-align: center;
   border-width: 3px;
-  border-color: rgb(230, 197, 65);;
+  border-color: rgb(230, 197, 65);
 }
 
-input:focus, textarea:focus{
+input:focus,
+textarea:focus {
   outline: none !important;
   border-color: rgb(230, 197, 65);
   box-shadow: 0 0 20px rgb(230, 197, 65);
 }
 
-.centerText{
+.centerText {
   display: block;
   margin: 0px auto;
   text-align: center;
   font-size: 20px;
   margin-top: 10px;
+  margin-bottom: 10px;
 }
 
-
 .pagination a {
-  
-  color: brown;
+  color: rgb(165, 44, 44);
   cursor: pointer;
   background-color: white;
   text-decoration: none;
-
 }
 
-
-.pagination a:hover{
+.pagination a:hover {
   color: white !important;
-  background-color: brown;
+  background-color: rgb(165, 44, 44, 0.5) !important;
   box-shadow: 0 0 10px rgb(230, 197, 65);
 }
 
-/* .pagination a:focus{
+.pagination a:focus {
   color: white !important;
-  background-color: brown;
-  box-shadow: 0 0 10px rgb(230, 197, 65);
-  outline-color: black !important;
-} */
-
+  background-color: rgb(165, 44, 44, 0.5) !important;
+  box-shadow: 0 0 20px rgb(230, 197, 65);
+}
 
 .page-item.active .page-link {
   color: white !important;
-  background-color:brown  !important;
+  background-color: rgb(165, 44, 44, 0.5) !important;
   box-shadow: 0 0 10px rgb(230, 197, 65) !important;
-  outline-color: black !important;
-  
+  border-color: rgb(230, 197, 65) !important;
 }
 
 .page-item .page-link {
-  color: brown !important;
- 
-  
-    
+  color: rgb(165, 44, 44) !important;
 }
 
 .page-item.hover .page-link {
-  background-color: brown !important;
+  background-color: rgb(165, 44, 44, 0.5) !important;
   color: white;
   box-shadow: 0 0 20px rgb(230, 197, 65) !important;
-
 }
 
-.disabled a{
+.disabled a {
   color: grey !important;
   cursor: not-allowed;
   pointer-events: none;
 }
 
-
 .page-item.focus .page-link {
-  background-color: brown !important;
+  background-color: rgb(165, 44, 44, 0.5) !important;
   color: white;
   box-shadow: 0 0 20px rgb(230, 197, 65) !important;
-
 }
-
