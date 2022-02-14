@@ -132,8 +132,8 @@ const App = () => {
   };
 
   return (
-    <div className="bg-image background-filter">
-      <div className="container u-non-blurred">
+    <div className="bg-image">
+      <div className="container">
         <Header />
 
         <input
