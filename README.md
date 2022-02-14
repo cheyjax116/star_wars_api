@@ -3,7 +3,7 @@
 Summary: <br>
 Star Wars API application using React, HTML, CSS and Javascript.
 
-<a href="">CLICK HERE TO SEARCH THE DATABASE!</a> 
+<a href="https://star-wars-api-react.herokuapp.com/">CLICK HERE TO SEARCH THE DATABASE!</a> 
 
 <img alt="Star Wars API App Screenshot" src="/src/img/app_screenshot.png">
 

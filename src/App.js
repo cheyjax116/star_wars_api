@@ -16,31 +16,31 @@ const App = () => {
 
   useEffect(() => {
     const urls = [
-      "http://swapi.dev/api/people/?page=1",
-      "http://swapi.dev/api/people/?page=2",
-      "http://swapi.dev/api/people/?page=3",
-      "http://swapi.dev/api/people/?page=4",
-      "http://swapi.dev/api/people/?page=5",
-      "http://swapi.dev/api/people/?page=6",
-      "http://swapi.dev/api/people/?page=7",
-      "http://swapi.dev/api/people/?page=8",
-      "http://swapi.dev/api/people/?page=9",
+      "https://swapi.dev/api/people/?page=1",
+      "https://swapi.dev/api/people/?page=2",
+      "https://swapi.dev/api/people/?page=3",
+      "https://swapi.dev/api/people/?page=4",
+      "https://swapi.dev/api/people/?page=5",
+      "https://swapi.dev/api/people/?page=6",
+      "https://swapi.dev/api/people/?page=7",
+      "https://swapi.dev/api/people/?page=8",
+      "https://swapi.dev/api/people/?page=9",
     ];
 
     const planetsData = [
-      "http://swapi.dev/api/planets/?page=1",
-      "http://swapi.dev/api/planets/?page=2",
-      "http://swapi.dev/api/planets/?page=3",
-      "http://swapi.dev/api/planets/?page=4",
-      "http://swapi.dev/api/planets/?page=5",
-      "http://swapi.dev/api/planets/?page=6",
+      "https://swapi.dev/api/planets/?page=1",
+      "https://swapi.dev/api/planets/?page=2",
+      "https://swapi.dev/api/planets/?page=3",
+      "https://swapi.dev/api/planets/?page=4",
+      "https://swapi.dev/api/planets/?page=5",
+      "https://swapi.dev/api/planets/?page=6",
     ];
 
     const speciesData = [
-      "http://swapi.dev/api/species/?page=1",
-      "http://swapi.dev/api/species/?page=2",
-      "http://swapi.dev/api/species/?page=3",
-      "http://swapi.dev/api/species/?page=4",
+      "https://swapi.dev/api/species/?page=1",
+      "https://swapi.dev/api/species/?page=2",
+      "https://swapi.dev/api/species/?page=3",
+      "https://swapi.dev/api/species/?page=4",
     ];
 
     const allData = [];
